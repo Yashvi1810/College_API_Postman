@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "241385d3-ac79-49d3-8d13-5087183bac84",
+		"name": "College-DB API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50734393",
+		"_collection_link": "https://anonymoussssse030-2801811.postman.co/workspace/Project-Basic~5d043c66-79e3-434a-b938-3fd52e405bd7/collection/50734393-241385d3-ac79-49d3-8d13-5087183bac84?action=share&source=collection_link&creator=50734393"
+	},
+	"item": [
+		{
+			"name": "GET All Students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// JSON Schema definition",
+							"const studentSchema = {",
+							"    \"type\": \"object\",",
+							"    \"required\": [",
+							"        \"id\",",
+							"        \"name\",",
+							"        \"branch\",",
+							"        \"course\",",
+							"        \"language\",",
+							"        \"college\",",
+							"        \"city\",",
+							"        \"country\",",
+							"        \"phone\"",
+							"    ],",
+							"    \"properties\": {",
+							"        \"id\": { \"type\": \"string\" },",
+							"        \"name\": { \"type\": \"string\" },",
+							"        \"branch\": { \"type\": \"string\" },",
+							"        \"course\": { \"type\": \"string\" },",
+							"        \"language\": {",
+							"            \"type\": \"array\",",
+							"            \"items\": { \"type\": \"string\" }",
+							"        },",
+							"        \"college\": { \"type\": \"string\" },",
+							"        \"city\": { \"type\": \"string\" },",
+							"        \"country\": { \"type\": \"string\" },",
+							"        \"phone\": { \"type\": \"string\" }",
+							"    }",
+							"};",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time < 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Response is JSON\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"pm.test(\"Validate first student fields\", function () {",
+							"    let data = pm.response.json();",
+							"    pm.expect(data[0]).to.have.property(\"id\");",
+							"    pm.expect(data[0]).to.have.property(\"name\");",
+							"    pm.expect(data[0]).to.have.property(\"branch\");",
+							"    pm.expect(data[0]).to.have.property(\"course\");",
+							"});",
+							"",
+							"// Validate JSON schema for each student record",
+							"pm.test(\"Validate JSON Schema for all students\", function () {",
+							"    let data = pm.response.json();",
+							"    data.forEach(student => {",
+							"        pm.expect(student).to.have.jsonSchema(studentSchema);",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Pre-request script",
+							"// Any pre-request logic can be added here if needed"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "const studentSchema = {\r\n    \"type\": \"object\",\r\n    \"required\": [\r\n        \"id\",\r\n        \"name\",\r\n        \"branch\",\r\n        \"course\",\r\n        \"language\",\r\n        \"college\",\r\n        \"city\",\r\n        \"country\",\r\n        \"phone\"\r\n    ],\r\n    \"properties\": {\r\n        \"id\": {\r\n            \"type\": \"number\"\r\n        },\r\n        \"name\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"branch\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"course\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"language\": {\r\n            \"type\": \"array\",\r\n            \"items\": {\r\n                \"type\": \"string\"\r\n            }\r\n        },\r\n        \"college\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"city\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"country\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"phone\": {\r\n            \"type\": \"string\"\r\n        }\r\n    }\r\n};",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. STATUS CODE 201\r",
+							"pm.test(\"Status Code is 201 (Created)\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"// 2. VALIDATE RESPONSE TIME\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"// 3. CHECK RESPONSE IS JSON\r",
+							"pm.test(\"Response is JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							"\r",
+							"// 4. VALIDATE REQUIRED FIELDS\r",
+							"pm.test(\"Validate required fields in created record\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"\r",
+							"    pm.expect(data).to.have.property(\"id\");\r",
+							"    pm.expect(data).to.have.property(\"name\");\r",
+							"    pm.expect(data).to.have.property(\"branch\");\r",
+							"    pm.expect(data).to.have.property(\"course\");\r",
+							"    pm.expect(data).to.have.property(\"language\");\r",
+							"    pm.expect(data).to.have.property(\"college\");\r",
+							"    pm.expect(data).to.have.property(\"city\");\r",
+							"    pm.expect(data).to.have.property(\"country\");\r",
+							"    pm.expect(data).to.have.property(\"phone\");\r",
+							"});\r",
+							"\r",
+							"// 5. CHECK THAT NAME IS CORRECT\r",
+							"pm.test(\"Check name value\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"    pm.expect(data.name).to.eql(\"New Student\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"New Student\",\r\n  \"branch\": \"IT\",\r\n  \"course\": \"B.Tech\",\r\n  \"language\": [\"Python\", \"JavaScript\"],\r\n  \"college\": \"Uka Tarsadia University\",\r\n  \"city\": \"Surat\",\r\n  \"country\": \"India\",\r\n  \"phone\": \"9999988888\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Student (Full)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. STATUS CODE 200\r",
+							"pm.test(\"Status Code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// 2. VALIDATE RESPONSE TIME\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"// 3. CHECK RESPONSE IS JSON\r",
+							"pm.test(\"Response is JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							"\r",
+							"// 4. VALIDATE REQUIRED FIELDS\r",
+							"pm.test(\"Validate required fields after update\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"\r",
+							"    pm.expect(data).to.have.property(\"id\");\r",
+							"    pm.expect(data).to.have.property(\"name\");\r",
+							"    pm.expect(data).to.have.property(\"branch\");\r",
+							"    pm.expect(data).to.have.property(\"course\");\r",
+							"    pm.expect(data).to.have.property(\"language\");\r",
+							"    pm.expect(data).to.have.property(\"college\");\r",
+							"    pm.expect(data).to.have.property(\"city\");\r",
+							"    pm.expect(data).to.have.property(\"country\");\r",
+							"    pm.expect(data).to.have.property(\"phone\");\r",
+							"});\r",
+							"\r",
+							"// 5. VERIFY UPDATED VALUE\r",
+							"pm.test(\"Validate updated name\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"    pm.expect(data.name).to.eql(\"Nidhi Joshi Updated\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Nidhi Joshi Updated\",\r\n  \"branch\": \"IT\",\r\n  \"course\": \"B.Tech\",\r\n  \"language\": [\"JavaScript\", \"NodeJS\", \"ReactJS\"],\r\n  \"college\": \"GTU\",\r\n  \"city\": \"Rajkot\",\r\n  \"country\": \"India\",\r\n  \"phone\": \"9999990000\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Update Student (Partial)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. STATUS CODE 200\r",
+							"pm.test(\"Status Code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// 2. RESPONSE TIME CHECK\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"// 3. RESPONSE IS JSON\r",
+							"pm.test(\"Response is JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							"\r",
+							"// 4. REQUIRED FIELDS STILL EXIST (because record remains complete)\r",
+							"pm.test(\"Record still contains required fields\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"\r",
+							"    pm.expect(data).to.have.property(\"id\");\r",
+							"    pm.expect(data).to.have.property(\"name\");\r",
+							"    pm.expect(data).to.have.property(\"branch\");\r",
+							"    pm.expect(data).to.have.property(\"course\");\r",
+							"    pm.expect(data).to.have.property(\"language\");\r",
+							"    pm.expect(data).to.have.property(\"college\");\r",
+							"    pm.expect(data).to.have.property(\"city\");\r",
+							"    pm.expect(data).to.have.property(\"country\");\r",
+							"    pm.expect(data).to.have.property(\"phone\");\r",
+							"});\r",
+							"\r",
+							"// 5. VALIDATE UPDATED FIELDS ONLY\r",
+							"pm.test(\"Validate updated fields\", function () {\r",
+							"    let data = pm.response.json();\r",
+							"    pm.expect(data.name).to.eql(\"Jay Updated (PATCH)\");\r",
+							"    pm.expect(data.city).to.eql(\"Vadodara\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Pre-request script - runs before the request is sent",
+							"// Add any pre-request logic here if needed"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jay Updated (PATCH)\",\r\n  \"city\": \"Vadodara\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. STATUS CODE 200 or 204\r",
+							"pm.test(\"Status Code is 200 or 204\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);\r",
+							"});\r",
+							"\r",
+							"// 2. RESPONSE TIME CHECK\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"// 3. VERIFY RESPONSE IS JSON OR EMPTY (for 204)\r",
+							"pm.test(\"Response is JSON or empty for 204\", function () {\r",
+							"    if (pm.response.code === 200) {\r",
+							"        pm.response.to.have.header(\"Content-Type\");\r",
+							"        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"    } else {\r",
+							"        pm.expect(pm.response.text()).to.eql(\"\");\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"// 4. OPTIONAL: VERIFY RECORD IS ACTUALLY DELETED\r",
+							"pm.sendRequest(\"http://localhost:3000/students/5\", function (err, res) {\r",
+							"    pm.test(\"Record should not exist after deletion\", function () {\r",
+							"        pm.expect(res.code).to.be.equal(404);\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

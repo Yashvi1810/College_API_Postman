@@ -1,0 +1,442 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Nidhi Updated (PATCH)",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "Python"
+      ],
+      "college": "New College Name",
+      "city": "New City Name",
+      "country": "India",
+      "phone": "9999999999"
+    },
+    {
+      "id": "2",
+      "name": "Aarav Patel",
+      "branch": "Computer Engineering",
+      "course": "B.Tech",
+      "language": [
+        "C++",
+        "JavaScript"
+      ],
+      "college": "Nirma University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "9876543210"
+    },
+    {
+      "id": "3",
+      "name": "Riya Shah",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Python"
+      ],
+      "college": "DAIICT",
+      "city": "Gandhinagar",
+      "country": "India",
+      "phone": "9123456789"
+    },
+    {
+      "id": "4",
+      "name": "Updated Student 4",
+      "branch": "Computer Science",
+      "course": "BCA",
+      "language": [
+        "Java",
+        "PHP"
+      ],
+      "college": "MS University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "9988776655"
+    },
+    {
+      "id": "6",
+      "name": "Yash Mehta",
+      "branch": "Computer Engineering",
+      "course": "B.Tech",
+      "language": [
+        "C",
+        "Java"
+      ],
+      "college": "LD Engineering",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "8888888888"
+    },
+    {
+      "id": "7",
+      "name": "Harshil Modi",
+      "branch": "IT",
+      "course": "BCA",
+      "language": [
+        "Python",
+        "C++"
+      ],
+      "college": "GLS University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "7878787878"
+    },
+    {
+      "id": "8",
+      "name": "Priya Panchal",
+      "branch": "Computer Science",
+      "course": "B.Tech",
+      "language": [
+        "JavaScript"
+      ],
+      "college": "Silver Oak University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "9099554433"
+    },
+    {
+      "id": "9",
+      "name": "Dhruv Chauhan",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "C#",
+        ".NET"
+      ],
+      "college": "Charusat University",
+      "city": "Anand",
+      "country": "India",
+      "phone": "7878000900"
+    },
+    {
+      "id": "10",
+      "name": "Sanjana Trivedi",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Python",
+        "R"
+      ],
+      "college": "Marwadi University",
+      "city": "Rajkot",
+      "country": "India",
+      "phone": "9988001122"
+    },
+    {
+      "id": "11",
+      "name": "Jay Updated (PATCH)",
+      "branch": "Computer Science",
+      "course": "BCA",
+      "language": [
+        "Java",
+        "JavaScript"
+      ],
+      "college": "MS University",
+      "city": "Vadodara",
+      "country": "India",
+      "phone": "9000011122"
+    },
+    {
+      "id": "12",
+      "name": "Hetvi Patel",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Python"
+      ],
+      "college": "Uka Tarsadia University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "9900990099"
+    },
+    {
+      "id": "13",
+      "name": "Krish Shah",
+      "branch": "Computer Engineering",
+      "course": "Diploma",
+      "language": [
+        "C",
+        "C++"
+      ],
+      "college": "Government Polytechnic",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "9099223344"
+    },
+    {
+      "id": "14",
+      "name": "Tanvi Desai",
+      "branch": "Computer Science",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "Python"
+      ],
+      "college": "PDPU",
+      "city": "Gandhinagar",
+      "country": "India",
+      "phone": "9012345678"
+    },
+    {
+      "id": "15",
+      "name": "Meet Panchani",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "JavaScript",
+        "NodeJS",
+        "ReactJS"
+      ],
+      "college": "GTU",
+      "city": "Rajkot",
+      "country": "India",
+      "phone": "9999990000"
+    },
+    {
+      "id": "16",
+      "name": "Mitali Shah",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "R",
+        "Python"
+      ],
+      "college": "Nirma University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "9977886655"
+    },
+    {
+      "id": "17",
+      "name": "Parth Bhatt",
+      "branch": "Computer Engineering",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "C"
+      ],
+      "college": "DDU University",
+      "city": "Nadiad",
+      "country": "India",
+      "phone": "8899776655"
+    },
+    {
+      "id": "18",
+      "name": "Aditi Dave",
+      "branch": "Computer Science",
+      "course": "BCA",
+      "language": [
+        "Python",
+        "JavaScript"
+      ],
+      "college": "MS University",
+      "city": "Vadodara",
+      "country": "India",
+      "phone": "9812345678"
+    },
+    {
+      "id": "19",
+      "name": "Jatin Solanki",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "SQL"
+      ],
+      "college": "Charotar University",
+      "city": "Anand",
+      "country": "India",
+      "phone": "9009009009"
+    },
+    {
+      "id": "21",
+      "name": "Rudra Patel",
+      "branch": "Computer Engineering",
+      "course": "Diploma",
+      "language": [
+        "C",
+        "Python"
+      ],
+      "college": "Government Polytechnic",
+      "city": "Surat",
+      "country": "India",
+      "phone": "8111223344"
+    },
+    {
+      "id": "22",
+      "name": "Aarohi Chauhan",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "JavaScript",
+        "NodeJS"
+      ],
+      "college": "Silver Oak University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "8111992233"
+    },
+    {
+      "id": "23",
+      "name": "Manav Shah",
+      "branch": "Computer Engineering",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "C++"
+      ],
+      "college": "LD Engineering",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "7007007007"
+    },
+    {
+      "id": "24",
+      "name": "Khushi Patel",
+      "branch": "IT",
+      "course": "BCA",
+      "language": [
+        "Python"
+      ],
+      "college": "GLS University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "9099001234"
+    },
+    {
+      "id": "25",
+      "name": "Raj Doshi",
+      "branch": "Computer Science",
+      "course": "B.Tech",
+      "language": [
+        "Java",
+        "SQL"
+      ],
+      "college": "GTU",
+      "city": "Rajkot",
+      "country": "India",
+      "phone": "9509509500"
+    },
+    {
+      "id": "26",
+      "name": "Ishika Shah",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "C",
+        "Python"
+      ],
+      "college": "Nirma University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "phone": "8008008008"
+    },
+    {
+      "id": "27",
+      "name": "Vivek Prajapati",
+      "branch": "Computer Engineering",
+      "course": "B.Tech",
+      "language": [
+        "JavaScript"
+      ],
+      "college": "Uka Tarsadia University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "9669669669"
+    },
+    {
+      "id": "28",
+      "name": "Simran Kaur",
+      "branch": "Computer Science",
+      "course": "B.Tech",
+      "language": [
+        "Python",
+        "Java"
+      ],
+      "college": "PDPU",
+      "city": "Gandhinagar",
+      "country": "India",
+      "phone": "9123456700"
+    },
+    {
+      "id": "29",
+      "name": "Tirth Patel",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "PHP",
+        "JavaScript"
+      ],
+      "college": "Charotar University",
+      "city": "Anand",
+      "country": "India",
+      "phone": "9080706050"
+    },
+    {
+      "id": "30",
+      "name": "Vaidehi Shah",
+      "branch": "Computer Science",
+      "course": "B.Tech",
+      "language": [
+        "C",
+        "Java"
+      ],
+      "college": "DAIICT",
+      "city": "Gandhinagar",
+      "country": "India",
+      "phone": "9001200456"
+    },
+    {
+      "id": "b36e",
+      "name": "New Student",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "Python",
+        "JavaScript"
+      ],
+      "college": "Uka Tarsadia University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "9999988888"
+    },
+    {
+      "id": "bce5",
+      "query": "\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "
+    },
+    {
+      "id": "a9de",
+      "query": "\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "
+    },
+    {
+      "id": "a05b",
+      "name": "Yashvi Vaishnav",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "UI/UX",
+        "QA-QC"
+      ],
+      "college": "Uka Tarsadia University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "7816073594"
+    },
+    {
+      "id": "3cea",
+      "name": "Yashvi Vaishnav",
+      "branch": "IT",
+      "course": "B.Tech",
+      "language": [
+        "UI/UX",
+        "QA-QC"
+      ],
+      "college": "Uka Tarsadia University",
+      "city": "Surat",
+      "country": "India",
+      "phone": "7816073594"
+    }
+  ]
+}
